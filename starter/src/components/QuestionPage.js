@@ -1,9 +1,8 @@
-import { connect } from "react-redux";
-import { useLocation, useNavigate, useParams, Navigate } from "react-router-dom";
+import {connect} from "react-redux";
+import {Navigate, useNavigate, useParams} from "react-router-dom";
 import {handleAnswerQuestion} from "../actions/questions";
 
 const QuestionPage = ({dispatch, authedUser, question, author}) => {
-
     const navigate = useNavigate();
 
     if (!authedUser || !question || !author) {
@@ -39,16 +38,18 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
     };
 
     return (
-        <div>
+        <div className="center">
             <h1>Poll by {author.id}</h1>
             <div>
-                <img src={author.avatarURL} alt="Profile"/>
+                <img src={author.avatarURL} alt="Profile" className="avatar"/>
             </div>
+            <div><span >{question.author}</span></div>
             <div>
                 <h2>Would you rather?</h2>
             </div>
             <div>
-                <button onClick={handleOptionOne} disabled={hasVoted}>
+                <button onClick={handleOptionOne} disabled={hasVoted}
+                        className={"center" + (hasVotedForOptionOne ? "center" : "")}>
                     <div className={hasVotedForOptionOne ? "chosen" : ""}>
                         <p>{question.optionOne.text}</p>
                         {!hasVoted &&
@@ -59,7 +60,8 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
                         }
                     </div>
                 </button>
-                <button onClick={handleOptionTwo} disabled={hasVoted}>
+                <button onClick={handleOptionTwo} disabled={hasVoted}
+                        className={"center" + (hasVotedForOptionTwo ? "center" : "")}>
                     <p>{question.optionTwo.text}</p>
                     {!hasVoted &&
                     <p>Click</p>

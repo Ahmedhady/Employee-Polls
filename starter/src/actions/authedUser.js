@@ -8,7 +8,7 @@ export function setAuthedUser (authedUser) {
     }
 }
 
-export function logoutAuthedUser (authedUser) {
+export function logoutAuthedUser () {
     return {
         type: LOGOUT_AUTHED_USER,
     }

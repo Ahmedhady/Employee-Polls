@@ -4,14 +4,14 @@ import {Link} from "react-router-dom";
 const Question = ({question, author}) => {
     return (
         <Link to={'questions/' + question.id} className="tweet">
-        <div className="center">
-            <div >
-                <img className="avatar" src={author?.avatarURL} alt="Author" />
-            </div>
+         <img src={author?.avatarURL} alt="Author" className="avatar"/>
+        <div className="tweet-info">
+            <span></span>
             <div>
-                <div >{question.author}</div>
-                <p>{new Date(question.timestamp).toDateString()}</p>
-                <p>View Question</p>
+                <span >{question.author}</span>
+                <div>{new Date(question.timestamp).toDateString()}</div>
+                <p></p>
+                <p className="tweet-icon">View Question</p>
             </div>
         </div>
         </Link>

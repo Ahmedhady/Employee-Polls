@@ -33,24 +33,28 @@ export function handleAddQuestion(optionOneText, optionTwoText){
     return (dispatch, getState) => {
         const { authedUser } = getState();
 
-        dispatch (showLoading());
+        //dispatch (showLoading());
 
         return saveQuestion({optionOneText, optionTwoText, authedUser})
-        .then((question) => dispatch(addQuestion(question)))
-        .then((question) => dispatch(addQuestionUser(question)))
-        .then(() => dispatch(hideLoading()));
+        .then((question) => {
+            dispatch(addQuestion(question))
+            dispatch(addQuestionUser(question))
+        })
+        //.then(() => dispatch(hideLoading()));
     }
 }
 
-export function handleAnswerQuestion(qid, answer){
+export function handleAnswerQuestion(questionId, answer){
     return (dispatch, getState) => {
         const { authedUser } = getState();
 
-        dispatch(showLoading());
+        //dispatch(showLoading());
 
-        return saveQuestionAnswer(authedUser.id, qid, answer)
-        .then(() => dispatch(addAnswerQuestion(authedUser.id, qid, answer)))
-        .then(() => dispatch(addAnswerUser(authedUser.id, qid, answer)))
-        .then(() => dispatch(hideLoading()));
+        return saveQuestionAnswer(authedUser.id, questionId, answer)
+        .then(() => {
+            dispatch(addAnswerQuestion(authedUser.id, questionId, answer))
+            dispatch(addAnswerUser(authedUser.id, questionId, answer))
+        })
+        //.then(() => dispatch(hideLoading()));
     }
 }

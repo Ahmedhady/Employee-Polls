@@ -42,7 +42,7 @@ const App = (props) => {
       <Routes>
         <Route path="/" exact element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
         <Route path="/new" exact element={<ProtectedRoute><NewQuestion/></ProtectedRoute>}/>
-        <Route path="/question/:id" exact element={<ProtectedRoute><QuestionPage/></ProtectedRoute>}/>
+        <Route path="/questions/:id" exact element={<ProtectedRoute><QuestionPage/></ProtectedRoute>}/>
         <Route path="/leaderboard" exact element={<ProtectedRoute><Leaderboard/></ProtectedRoute>}/>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />    
