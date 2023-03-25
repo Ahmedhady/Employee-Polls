@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import {Navigate, useNavigate, useParams} from "react-router-dom";
-import {handleAnswerQuestion} from "../actions/questions";
+import {handleAddAnswer} from "../actions/questions";
 
 const QuestionPage = ({dispatch, authedUser, question, author}) => {
     const navigate = useNavigate();
@@ -15,13 +15,13 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
 
     const handleOptionOne = (e) => {
         e.preventDefault();
-        dispatch(handleAnswerQuestion(question.id, "optionOne"));
+        dispatch(handleAddAnswer(question.id, "optionOne"));
         navigate("/");
     };
 
     const handleOptionTwo = (e) => {
         e.preventDefault();
-        dispatch(handleAnswerQuestion(question.id, "optionTwo"));
+        dispatch(handleAddAnswer(question.id, "optionTwo"));
         navigate("/");
     };
 

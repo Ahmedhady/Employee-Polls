@@ -21,7 +21,7 @@ const Navbar = (props) => {
                 <Link to="/">Dashboard</Link>
             </li>
             <li>
-                <Link to="/new">New Question</Link>
+                <Link to="/add">New Question</Link>
             </li>
             <li>
                 <Link to="/leaderboard">Leaderboard</Link>

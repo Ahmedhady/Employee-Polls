@@ -13,7 +13,6 @@ import Navbar from './components/Navbar';
 import PageNotFound from './components/PageNotFound';
 import Leaderboard from './components/Leaderboard';
 
-
 const App = (props) => {
 
   useEffect(() => {
@@ -23,8 +22,6 @@ const App = (props) => {
   const location = useLocation();
 
   const isUserAuthorized = props.authedUser !== null;
-
-  console.log("!isUserAuthorized", !isUserAuthorized);
 
   function ProtectedRoute({ children }) {
     return isUserAuthorized ? (
@@ -36,13 +33,12 @@ const App = (props) => {
 
   return (
     <Fragment>
-    {!isUserAuthorized ? null : <Navbar />}
-      
       <LoadingBar style={{ backgroundColor: '#2171ec', height: '2px' }} />
+      {!isUserAuthorized ? null : <Navbar />}
       <Routes>
         <Route path="/" exact element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
-        <Route path="/new" exact element={<ProtectedRoute><NewQuestion/></ProtectedRoute>}/>
-        <Route path="/questions/:id" exact element={<ProtectedRoute><QuestionPage/></ProtectedRoute>}/>
+        <Route path="/add" exact element={<ProtectedRoute><NewQuestion/></ProtectedRoute>}/>
+        <Route path="//questions/:id" exact element={<ProtectedRoute><QuestionPage/></ProtectedRoute>}/>
         <Route path="/leaderboard" exact element={<ProtectedRoute><Leaderboard/></ProtectedRoute>}/>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />    
