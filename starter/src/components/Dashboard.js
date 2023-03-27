@@ -3,11 +3,11 @@ import Question from "./Question";
 
 const Dashboard = ({authedUser, questions, users}) => {
 
-    const unanswered = (question) => (!question.optionOne.votes.includes(authedUser.id)
-        && !question.optionTwo.votes.includes(authedUser.id));
+    const unanswered = (question) => (!question.optionOne.votes.includes(authedUser)
+        && !question.optionTwo.votes.includes(authedUser));
 
-    const answered = (question) => (question.optionOne.votes.includes(authedUser.id)
-        || question.optionTwo.votes.includes(authedUser.id));
+    const answered = (question) => (question.optionOne.votes.includes(authedUser)
+        || question.optionTwo.votes.includes(authedUser));
 
     return (
         <div>
@@ -24,7 +24,7 @@ const Dashboard = ({authedUser, questions, users}) => {
                     ))}
             </ul>
 
-            <h2 className="center">Answered Questions</h2>
+            <h2 className="center">Done</h2>
             <ul className="dashboard-list">
                 {questions
                     .filter(answered)
