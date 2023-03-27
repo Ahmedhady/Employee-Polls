@@ -60,7 +60,7 @@ export function handleAddQuestion(optionOneText, optionTwoText){
     }
 }*/
 
-export function handleAddAnswer(questionId, answer) {
+export function handleAddAnswer(questionId, answer, author) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         dispatch(showLoading());

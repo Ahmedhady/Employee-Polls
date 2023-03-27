@@ -16,13 +16,13 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
 
     const handleOptionOne = (e) => {
         e.preventDefault();
-        dispatch(addAnswerQuestion(authedUser.id, question.id,"optionTwo"));
+        dispatch(handleAddAnswer(question.id,"optionTwo", author));
         navigate("/");
     };
 
     const handleOptionTwo = (e) => {
         e.preventDefault();
-        dispatch(addAnswerQuestion(authedUser.id, question.id,"optionTwo"));
+        dispatch(handleAddAnswer(question.id,"optionTwo", author));
         navigate("/");
     };
 
