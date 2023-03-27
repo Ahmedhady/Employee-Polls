@@ -11,10 +11,10 @@ const Dashboard = ({authedUser, questions, users}) => {
 
     return (
         <div>
-            <h1>Dashboard</h1>
+            <h1 className="center">Dashboard</h1>
 
-            <h2>New Questions</h2>
-            <ul>
+            <h2 className="center">New Questions</h2>
+            <ul className="dashboard-list">
                 {questions
                     .filter(unanswered)
                     .map((question) => (
@@ -24,8 +24,8 @@ const Dashboard = ({authedUser, questions, users}) => {
                     ))}
             </ul>
 
-            <h2>Answered Questions</h2>
-            <ul>
+            <h2 className="center">Answered Questions</h2>
+            <ul className="dashboard-list">
                 {questions
                     .filter(answered)
                     .map((question) => (

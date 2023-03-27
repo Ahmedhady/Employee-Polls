@@ -1,6 +1,7 @@
 import {connect} from "react-redux";
 import {Navigate, useNavigate, useParams} from "react-router-dom";
-import {handleAddAnswer} from "../actions/questions";
+import { addAnswerQuestion } from "../actions/questions";
+import { handleAddAnswer } from "../actions/questions";
 
 const QuestionPage = ({dispatch, authedUser, question, author}) => {
     const navigate = useNavigate();
@@ -15,13 +16,13 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
 
     const handleOptionOne = (e) => {
         e.preventDefault();
-        dispatch(handleAddAnswer(question.id, "optionOne"));
+        dispatch(addAnswerQuestion(question.id, "optionOne", authedUser.id));
         navigate("/");
     };
 
     const handleOptionTwo = (e) => {
         e.preventDefault();
-        dispatch(handleAddAnswer(question.id, "optionTwo"));
+        dispatch(addAnswerQuestion(question.id, "optionTwo", authedUser.id));
         navigate("/");
     };
 
@@ -42,8 +43,9 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
             <h1>Poll by {author.id}</h1>
             <div>
                 <img src={author.avatarURL} alt="Profile" className="avatar"/>
+                <div>{author.name}</div>
+                <div>{question.author}</div>
             </div>
-            <div><span >{question.author}</span></div>
             <div>
                 <h2>Would you rather?</h2>
             </div>

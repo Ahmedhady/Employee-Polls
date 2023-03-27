@@ -21,7 +21,7 @@ function addQuestion(question) {
     }
 }
 
-function addAnswerQuestion(author, qid, answer) {
+export function addAnswerQuestion(author, qid, answer) {
     return {
         type: ADD_ANSWER_QUESTION,
         author,
