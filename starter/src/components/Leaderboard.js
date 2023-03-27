@@ -5,6 +5,7 @@ const Leaderboard = ({users}) => {
     return (
         <div className="center" >
             <h1>Leaderboard</h1>
+            <table className="center">
                     <th>User</th>
                     <th></th>
                     <th>Answered</th>
@@ -20,6 +21,7 @@ const Leaderboard = ({users}) => {
                         </tr>
                     ))
                 }
+                </table>
         </div>
     );
 };
