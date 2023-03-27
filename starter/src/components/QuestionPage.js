@@ -15,14 +15,16 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
     const hasVoted = hasVotedForOptionOne || hasVotedForOptionTwo;
 
     const handleOptionOne = (e) => {
+        console.log("authedUser.id", authedUser.id, "authedUser", authedUser)
         e.preventDefault();
-        dispatch(handleAddAnswer(question.id,"optionTwo", author));
+        dispatch(handleAddAnswer(authedUser, question.id, "optionOne"));
         navigate("/");
     };
 
     const handleOptionTwo = (e) => {
+        console.log("authedUser.id", authedUser.id, "authedUser", authedUser)
         e.preventDefault();
-        dispatch(handleAddAnswer(question.id,"optionTwo", author));
+        dispatch(handleAddAnswer(authedUser, question.id, "optionTwo"));
         navigate("/");
     };
 

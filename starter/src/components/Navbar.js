@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import LOGO from '../assets/logo.jpeg';
-import { setAuthedUser } from "../actions/authedUser";
+import { setAuthedUser , logoutAuthedUser } from "../actions/authedUser";
 import { connect } from "react-redux";
 
 const Navbar = (props) => {
 
     const handleLogOut = () => {
         if (props.userData != null) {
-          props.dispatch(setAuthedUser(null));
+          props.dispatch(logoutAuthedUser());
         }
       };
 
