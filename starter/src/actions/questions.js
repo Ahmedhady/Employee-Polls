@@ -64,10 +64,10 @@ export function handleAddAnswer(questionId, answer) {
     return (dispatch, getState) => {
         const { authedUser } = getState();
         dispatch(showLoading());
-        return saveQuestionAnswer(authedUser.id, questionId, answer)
+        return saveQuestionAnswer(authedUser, questionId, answer)
             .then(() => {
-                dispatch(addAnswerQuestion(authedUser.id, questionId, answer));
-                dispatch(addAnswerUser(authedUser.id, questionId, answer));
+                dispatch(addAnswerQuestion(authedUser, questionId, answer));
+                dispatch(addAnswerUser(authedUser, questionId, answer));
             })
             .then(() => dispatch(hideLoading()));
     };

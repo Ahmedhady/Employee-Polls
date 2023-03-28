@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { setAuthedUser } from "../actions/authedUser";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import LOGO from '../assets/logo.jpeg';
 
 const Login = (props) => {
 
@@ -35,7 +36,10 @@ const Login = (props) => {
   
     return (
       <p className="center">
-        Login & join us
+        <h1>Employee Polls</h1>
+        <div><img src={LOGO} alt="logo" className="avatar" /></div>
+        <div>
+        Log In
         <form onSubmit={handleLogIn}>
             <p>
           <input type="text" placeholder={"id"} onChange={handleUserName}/>
@@ -44,12 +48,13 @@ const Login = (props) => {
           <input type="password" placeholder={"password"} onChange={handleUserPassword}/>
           </p>
           <p>
-          <button disabled={isEmpty()}>Login</button>
+          <button className="btn" disabled={isEmpty()}>Login</button>
           </p>
           <p>
             {errorMessage}
           </p>
         </form>
+        </div>
       </p>
     );
   };

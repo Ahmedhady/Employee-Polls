@@ -26,13 +26,14 @@ const NewQuestion = ({dispatch}) => {
 
     return (
         <div className="center">
-            <h1>Add New Question</h1>
+            <h1>Would You Rather</h1>
+            <h2>Create Your own Poll</h2>
             <form onSubmit={handleSubmit}>
                 <p>
-                        <textarea className="textarea" value={firstOption} onChange={handleFirstOptionChange} placeholder={"Option 1"} />
+                        <textarea className="textarea" value={firstOption} onChange={handleFirstOptionChange} placeholder={"Option One"} />
                 </p>
                     <p>
-                        <textarea className="textarea" value={secondOption} onChange={handleSecondOptionChange} placeholder={"Option 2"} />
+                        <textarea className="textarea" value={secondOption} onChange={handleSecondOptionChange} placeholder={"Option Two"} />
                     </p>
                     <button className="btn" type="submit" disabled={isEmpty()}>
                         Submit

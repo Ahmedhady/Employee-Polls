@@ -10,21 +10,21 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
         return <Navigate to="*"/>;
     }
 
-    const hasVotedForOptionOne = question.optionOne.votes.includes(authedUser.id);
-    const hasVotedForOptionTwo = question.optionTwo.votes.includes(authedUser.id);
+    const hasVotedForOptionOne = question.optionOne.votes.includes(authedUser);
+    const hasVotedForOptionTwo = question.optionTwo.votes.includes(authedUser);
     const hasVoted = hasVotedForOptionOne || hasVotedForOptionTwo;
 
     const handleOptionOne = (e) => {
-        console.log("authedUser.id", authedUser.id, "authedUser", authedUser, "author", author)
+        console.log("authedUser.id", authedUser.id, "authedUser", authedUser, "question.id", question.id)
         e.preventDefault();
-        dispatch(handleAddAnswer(authedUser, question.id, "optionOne"));
+        dispatch(handleAddAnswer(question.id, "optionOne"));
         navigate("/");
     };
 
     const handleOptionTwo = (e) => {
-        console.log("authedUser.id", authedUser.id, "authedUser", authedUser, "author", author)
+        console.log("authedUser.id", authedUser.id, "authedUser", authedUser, "question.id", question.id)
         e.preventDefault();
-        dispatch(handleAddAnswer(authedUser, question.id, "optionTwo"));
+        dispatch(handleAddAnswer(question.id, "optionTwo"));
         navigate("/");
     };
 
