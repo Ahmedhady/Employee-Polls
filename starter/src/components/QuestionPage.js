@@ -17,19 +17,19 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
     const navigate = useNavigate();
 
     if (!authedUser || !question || !author) {
-        return <Navigate to="*"/>;
+        return <Navigate to=""/>;
     }
 
     const handleOptionOne = (e) => {
         e.preventDefault();
         dispatch(handleAddAnswer(question.id, "optionOne"));
-        navigate("/");
+        //navigate(""); 
     };
 
     const handleOptionTwo = (e) => {
         e.preventDefault();
         dispatch(handleAddAnswer(question.id, "optionTwo"));
-        navigate("/");
+        //navigate("");
     };
 
     const percentage = (option, question) => {
@@ -70,7 +70,6 @@ const QuestionPage = ({dispatch, authedUser, question, author}) => {
                 {isVoted && <p>{question.optionTwo.votes.length} Votes - {percentage("optionTwo", question)}</p>}
                 {hasVotedOptionTwo && <p>You voted Option 2</p>}
             </div>
-
         </div>
     );
 };

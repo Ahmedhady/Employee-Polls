@@ -7,8 +7,8 @@ import LOGO from '../assets/logo.jpeg';
 const Login = (props) => {
 
     const navigate = useNavigate();
-    const state = useLocation();
-  
+    const { state } = useLocation();
+
     const [userName, setUserName] = useState("");
     const [password, setUserPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");

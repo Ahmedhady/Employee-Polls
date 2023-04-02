@@ -21,10 +21,10 @@ const App = (props) => {
 
   const location = useLocation();
 
-  const isUserAuthorized = props.authedUser !== null;
+  const authed  = props.authedUser !== null;
 
   function ProtectedRoute({ children }) {
-    return isUserAuthorized ? (
+    return authed  ? (
       children
     ) : (
       <Navigate to="/login" replace state={{ path: location.pathname }} />
@@ -34,7 +34,7 @@ const App = (props) => {
   return (
     <Fragment>
       <LoadingBar style={{ backgroundColor: '#2171ec', height: '2px' }} />
-      {!isUserAuthorized ? null : <Navbar />}
+      {!authed  ? null : <Navbar />}
       <Routes>
         <Route path="/" exact element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
         <Route path="/add" exact element={<ProtectedRoute><NewQuestion/></ProtectedRoute>}/>
