@@ -35,26 +35,26 @@ const Login = (props) => {
     const isEmpty = () => userName === "" || password === "";
   
     return (
-      <p className="center">
+      <div className="center">
         <h1>Employee Polls</h1>
         <div><img src={LOGO} alt="logo" className="avatar" /></div>
         <div>
         <form onSubmit={handleLogIn}>
-            <div>
+            <p>
           <input data-testid="testId-name-input" type="text" placeholder={"id"} onChange={handleUserName}/>
-          </div>
-          <div>
+          </p>
+          <p>
           <input data-testid="testId-password-input" type="password" placeholder={"password"} onChange={handleUserPassword}/>
-          </div>
-          <div>
+          </p>
+          <p>
           <button data-testid="testId-submit-button" className="btn" disabled={isEmpty()}>Login</button>
-          </div>
-          <div data-testid="testId-error"> 
+          </p>
+          <p data-testid="testId-error"> 
             {errorMessage}
-          </div>
+          </p>
         </form>
         </div>
-      </p>
+      </div>
     );
   };
   
