@@ -39,18 +39,17 @@ const Login = (props) => {
         <h1>Employee Polls</h1>
         <div><img src={LOGO} alt="logo" className="avatar" /></div>
         <div>
-        Log In
         <form onSubmit={handleLogIn}>
             <p>
-          <input type="text" placeholder={"id"} onChange={handleUserName}/>
+          <input data-testid="testId-name-input" type="text" placeholder={"id"} onChange={handleUserName}/>
           </p>
           <p>
-          <input type="password" placeholder={"password"} onChange={handleUserPassword}/>
+          <input data-testid="testId-password-input" type="password" placeholder={"password"} onChange={handleUserPassword}/>
           </p>
           <p>
-          <button className="btn" disabled={isEmpty()}>Login</button>
+          <button data-testid="testId-submit-button" className="btn" disabled={isEmpty()}>Login</button>
           </p>
-          <p>
+          <p data-testid="testId-error"> 
             {errorMessage}
           </p>
         </form>
