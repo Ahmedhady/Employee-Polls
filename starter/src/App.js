@@ -43,7 +43,6 @@ const App = (props) => {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />    
       </Routes>
-   
    </Fragment>
   );
 }

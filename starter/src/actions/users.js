@@ -9,19 +9,19 @@ export function receiveUsers(users) {
     };
 }
 
+export function addQuestionUser({author, qid}) {
+    return {
+        type: ADD_QUESTION_USER,
+        author,
+        qid,
+    };
+}
+
 export function addAnswerUser(authedUser, qid, answer) {
     return {
         type: ADD_ANSWER_USER,
         authedUser,
         qid,
         answer,
-    };
-}
-
-export function addQuestionUser({author, id}) {
-    return {
-        type: ADD_QUESTION_USER,
-        author,
-        qid: id,
     };
 }

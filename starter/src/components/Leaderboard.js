@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 const Leaderboard = ({users}) => {
 
     return (
-        <div className="center" >
+        <div className="center">
             <h1>Leaderboard</h1>
             <table className="center">
                     <th>Users</th>
@@ -30,7 +30,7 @@ const mapStateToProps = ({ authedUser, users }) => {
     let usersArray = [];
   
     if(users) {
-      Object.keys(users).map(user => {
+      Object.keys(users).map((user) => {
         const answered = Object.keys(users[user].answers).length;
         const questioned = Object.keys(users[user].questions).length;
         users[user]['answered'] = answered;

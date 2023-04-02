@@ -11,9 +11,11 @@ const Question = ({question, author }) => {
                 <span>{author.name}</span>
                 <div>{question.author}</div>
                 <div>{formatDate(question.timestamp)}</div>
-                <p>Option One: {question.optionOne.text}</p>
+                <p>Option 1: {question.optionOne.text}</p>
+                <p>Votes: {question.optionOne.votes}</p>
                 <h5 className="center">Or</h5>
-                <p>Option Two: {question.optionTwo.text}</p>
+                <p>Option 2: {question.optionTwo.text}</p>
+                <p>Votes: {question.optionTwo.votes}</p>
                 <p className="center">
                 <p className="tweet-icon">View Question</p>
                 </p>
@@ -22,5 +24,5 @@ const Question = ({question, author }) => {
         </Link>
     );
 }
-
+  
 export default connect()(Question);

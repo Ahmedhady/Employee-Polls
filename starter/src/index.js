@@ -8,12 +8,10 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import reducer from "./reducers";
 import middleware from './middleware';
 
-
 const store = createStore(reducer,
   compose(
     middleware, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   ));
-
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);

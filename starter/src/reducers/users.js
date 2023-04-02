@@ -7,6 +7,14 @@ export default function users(state = {}, action) {
         ...state,
         ...action.users,
       };
+    case ADD_QUESTION_USER:
+      return {
+        ...state,
+        [action.author]: {
+          ...state[action.author],
+          questions: state[action.author].questions.concat(action.qid)
+        }
+      };
     case ADD_ANSWER_USER:
       return {
         ...state,
@@ -16,14 +24,6 @@ export default function users(state = {}, action) {
             ...state[action.authedUser].answers,
             [action.qid]: action.answer
           }
-        }
-      };
-    case ADD_QUESTION_USER:
-      return {
-        ...state,
-        [action.author]: {
-          ...state[action.author],
-          questions: state[action.author].questions.concat(action.qid)
         }
       };
     default:

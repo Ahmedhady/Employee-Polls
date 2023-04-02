@@ -30,14 +30,12 @@ const NewQuestion = ({dispatch}) => {
             <h2>Create Your own Poll</h2>
             <form onSubmit={handleSubmit}>
                 <p>
-                        <textarea className="textarea" value={firstOption} onChange={handleFirstOptionChange} placeholder={"Option One"} />
+                    <textarea className="textarea" value={firstOption} onChange={handleFirstOptionChange} placeholder={"Option One"} />
                 </p>
-                    <p>
-                        <textarea className="textarea" value={secondOption} onChange={handleSecondOptionChange} placeholder={"Option Two"} />
-                    </p>
-                    <button className="btn" type="submit" disabled={isEmpty()}>
-                        Submit
-                    </button>
+                <p>
+                    <textarea className="textarea" value={secondOption} onChange={handleSecondOptionChange} placeholder={"Option Two"} />
+                </p>
+                    <button className="btn" type="submit" disabled={isEmpty()}>Submit</button>
             </form>
         </div>
     );

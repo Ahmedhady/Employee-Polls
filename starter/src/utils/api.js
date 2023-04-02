@@ -11,12 +11,16 @@ export function getInitialData () {
 }
 
 export function saveQuestion(optionOneText, optionTwoText, author) {
-    return _saveQuestion({optionOneText, optionTwoText, author});
+    return _saveQuestion({
+        optionOneText,
+        optionTwoText,
+        author
+    });
 }
 
-export function saveQuestionAnswer(authedUserId, qid, answer) {
+export function saveQuestionAnswer(authedUser, qid, answer) {
     return _saveQuestionAnswer({
-        authedUser: authedUserId,
+        authedUser,
         qid,
         answer
     });

@@ -1,9 +1,5 @@
-import {connect} from "react-redux";
-
-
-const PageNotFound = (props) => {
-    return <div>PageNotFound</div>
+const PageNotFound = () => {
+    return <div className="center">PageNotFound</div>
 }
 
-
-export default connect()(PageNotFound);
+export default PageNotFound;

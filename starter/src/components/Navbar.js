@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LOGO from '../assets/logo.jpeg';
-import { setAuthedUser , logoutAuthedUser } from "../actions/authedUser";
+import { logoutAuthedUser } from "../actions/authedUser";
 import { connect } from "react-redux";
 
 const Navbar = (props) => {
 
-    const handleLogOut = () => {
-        if (props.userData != null) {
-          props.dispatch(logoutAuthedUser());
-        }
-      };
+  const navigate = useNavigate();
+
+  const handleLogOut = (e) => {
+        e.preventDefault();
+        props.dispatch(logoutAuthedUser());
+        navigate('/login');
+      }
 
     return(
      <nav  className="nav" >

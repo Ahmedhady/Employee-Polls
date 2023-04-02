@@ -1,36 +1,30 @@
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import Question from "./Question";
-import { useNavigate } from "react-router-dom";
 
-const NonAnswered = ({questionIds, authedUser, questions, type}) => {
-  return (
-    <ul>
-      {
-        questionIds && questionIds.map((id) => {
-          if (!questions[id].optionOne.votes.includes(authedUser) &&
-              !questions[id].optionTwo.votes.includes(authedUser)
-          ) {
-            return (
-              <li className="small-question-card" key={id}>
-                <Question done={false} id={id} />
-              </li>
-            )}
-          }
-        )
-      }
-    </ul>
-  )
+const NonAnswered = ({authedUser, questions, users}) => {
+
+    const newQuestion = (question) => (!question.optionOne.votes.includes(authedUser) && !question.optionTwo.votes.includes(authedUser));
+
+    return (
+        <div>
+            <h2 className="center">New Questions</h2>
+            <ul className="dashboard-list">
+                {questions.filter(newQuestion).map((question) => (
+                        <li key={question.id}>
+                            <Question question={question} author={users[question.author]}/>
+                        </li>
+                    ))}
+            </ul>
+        </div>
+    );
 }
 
-const mapStateToProps = ({ authedUser, questions }) => {
-
-  return {
+const mapStateToProps = ({authedUser, questions, users}) => ({
     authedUser,
-    questions,
-    questionIds: Object.keys(questions).sort(
-      (a, b) => questions[b].timestamp - questions[a].timestamp
+    questions: Object.values(questions).sort(
+        (a, b) => b.timestamp - a.timestamp
     ),
-  };
-};
+    users,
+});
 
 export default connect(mapStateToProps)(NonAnswered);

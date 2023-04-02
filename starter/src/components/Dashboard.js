@@ -1,49 +1,28 @@
 import {connect} from "react-redux";
-import Question from "./Question";
+import Answered from "./Answered";
+import NonAnswered from "./NonAnswered";
+import { useState } from "react";
 
-const Dashboard = ({authedUser, questions, users}) => {
+const Dashboard = () => {
 
-    const unanswered = (question) => (!question.optionOne.votes.includes(authedUser)
-        && !question.optionTwo.votes.includes(authedUser));
+    const [view, setView] = useState("");
 
-    const answered = (question) => (question.optionOne.votes.includes(authedUser)
-        || question.optionTwo.votes.includes(authedUser));
+    const handleView = (type) => {
+        setView(type);
+      }
+
 
     return (
-        <div>
-            <h1 className="center">Dashboard</h1>
+        <div className="center">
+            { view === "" ? <h3>New Question</h3> : <h3>Done</h3>}
+      
+      <button className="btn" onClick={() => handleView("answered")} >Done</button>
+      
+      <button className="btn" onClick={() => handleView("")} >New Question</button>
 
-            <h2 className="center">New Questions</h2>
-            <ul className="dashboard-list">
-                {questions
-                    .filter(unanswered)
-                    .map((question) => (
-                        <li key={question.id}>
-                            <Question question={question} author={users[question.author]}/>
-                        </li>
-                    ))}
-            </ul>
-
-            <h2 className="center">Done</h2>
-            <ul className="dashboard-list">
-                {questions
-                    .filter(answered)
-                    .map((question) => (
-                        <li key={question.id}>
-                            <Question question={question} author={users[question.author]}/>
-                        </li>
-                    ))}
-            </ul>
+      { view === "" ? <NonAnswered /> : <Answered />}
         </div>
     );
 }
 
-const mapStateToProps = ({authedUser, questions, users}) => ({
-    authedUser,
-    questions: Object.values(questions).sort(
-        (a, b) => b.timestamp - a.timestamp
-    ),
-    users,
-});
-
-export default connect(mapStateToProps)(Dashboard);
+export default connect()(Dashboard);
