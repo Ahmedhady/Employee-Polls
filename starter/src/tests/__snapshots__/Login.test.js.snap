@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login matches the snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <p
+        class="center"
+      >
+        <h1>
+          Employee Polls
+        </h1>
+        <div>
+          <img
+            alt="logo"
+            class="avatar"
+            src="logo.jpeg"
+          />
+        </div>
+        <div>
+          <form>
+            <p>
+              <input
+                data-testid="testId-name-input"
+                placeholder="id"
+                type="text"
+              />
+            </p>
+            <p>
+              <input
+                data-testid="testId-password-input"
+                placeholder="password"
+                type="password"
+              />
+            </p>
+            <p>
+              <button
+                class="btn"
+                data-testid="testId-submit-button"
+                disabled=""
+              >
+                Login
+              </button>
+            </p>
+            <p
+              data-testid="testId-error"
+            />
+          </form>
+        </div>
+      </p>
+    </div>
+  </body>,
+  "container": <div>
+    <p
+      class="center"
+    >
+      <h1>
+        Employee Polls
+      </h1>
+      <div>
+        <img
+          alt="logo"
+          class="avatar"
+          src="logo.jpeg"
+        />
+      </div>
+      <div>
+        <form>
+          <p>
+            <input
+              data-testid="testId-name-input"
+              placeholder="id"
+              type="text"
+            />
+          </p>
+          <p>
+            <input
+              data-testid="testId-password-input"
+              placeholder="password"
+              type="password"
+            />
+          </p>
+          <p>
+            <button
+              class="btn"
+              data-testid="testId-submit-button"
+              disabled=""
+            >
+              Login
+            </button>
+          </p>
+          <p
+            data-testid="testId-error"
+          />
+        </form>
+      </div>
+    </p>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
