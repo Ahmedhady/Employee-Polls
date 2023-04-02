@@ -6,13 +6,18 @@ const Leaderboard = ({users}) => {
         <div className="center">
             <h1>Leaderboard</h1>
             <table className="center">
+            <thead className="center">
+              <tr className="center">
                     <th>Users</th>
                     <th></th>
                     <th>Answered</th>
                     <th>Creadted</th>
                     <th>Score</th>
+                    </tr>
+                    </thead>
+                    <tbody className="center">
                 {users.map((user) => ( 
-                        <tr key={user.id}>
+                        <tr className="center" key={user.id}>
                             <td ><img src={user.avatarURL} alt ={`Avatar of ${user.name}`} className="avatar" /></td>
                             <td>{user.name}</td>
                             <td >{Object.keys(user.answers).length}</td>
@@ -21,6 +26,7 @@ const Leaderboard = ({users}) => {
                         </tr>
                     ))
                 }
+                </tbody>
                 </table>
         </div>
     );

@@ -16,9 +16,9 @@ const Question = ({question, author }) => {
                 <h5 className="center">Or</h5>
                 <p>Option 2: {question.optionTwo.text}</p>
                 <p>Votes: {question.optionTwo.votes}</p>
-                <p className="center">
+                <div className="center">
                 <p className="tweet-icon">View Question</p>
-                </p>
+                </div>
             </div>
         </div>
         </Link>
