@@ -1,4 +1,4 @@
-import {connect} from "react-redux";
+/*import {connect} from "react-redux";
 import {Navigate, useLocation , useNavigate, useParams} from "react-router-dom";
 import { handleAddAnswer } from "../actions/questions";
 
@@ -66,4 +66,4 @@ const mapStateToProps = ({authedUser, users, questions}) => {
     }
 };
 
-export default withRouter(connect(mapStateToProps)(UnVote));
+export default withRouter(connect(mapStateToProps)(UnVote));*/
